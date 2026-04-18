@@ -1,12 +1,17 @@
-"use client";
+import { OrganizationSwitcher, UserButton } from "@clerk/nextjs"
 
-import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
 
 export default function Home() {
   return (
-    <>
-    <Button variant={"outline"} size={"lg"} className="p-5 m-7" onClick={() => toast.success("Success!")}>Click me</Button>
-    </>
-  );
+    <div className="flex min-h-screen items-center justify-center bg-background flex-col gap-4">
+      <div className="text-center text-2xl font-bold">
+        <h1>Welcome to the NiNe Labs</h1>
+      </div>
+      <div className="flex gap-4">
+        <OrganizationSwitcher />
+        <UserButton />
+      </div>
+    </div>
+  )
 }
+
